@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Student</h1>
+        <form action="/deleteStudent" method="get">
+            <label for="index">Select Student to Delete:</label>
+            <select id="index" name="index">
+                <option th:each="student, iterStat : ${students}" th:value="${iterStat.index}" th:text="${iterStat.index} + ' - ' + ${student.name}"></option>
+            </select>
+            <button type="submit">Delete</button>
+        </form>
+        <a class="back-link" href="/students">View Students</a>
+    </div>
+</body>
+</html>

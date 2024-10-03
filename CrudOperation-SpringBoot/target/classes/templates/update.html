@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Student</title>
+    <style>
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Student Information</h1>
+    <form th:action="@{/saveUpdatedStudent}" method="get">
+        <input type="hidden" name="index" th:value="${index}" />
+        <label>Name:</label>
+        <input type="text" name="name" th:value="${student.name}" required/>
+        <label>Age:</label>
+        <input type="number" name="age" th:value="${student.age}" required/>
+        <label>Mobile No:</label>
+        <input type="text" name="mobile" th:value="${student.mobile}" required/>
+        <br/><br/>
+        <input type="submit" value="Update" style="background-color: #007bff; color: white; padding: 10px 20px; border: none;"/>
+    </form>
+</body>
+</html>
